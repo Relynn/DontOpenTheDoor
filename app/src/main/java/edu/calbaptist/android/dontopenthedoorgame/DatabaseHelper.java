@@ -77,5 +77,20 @@ public class DatabaseHelper {
         return player;
     }
 
+    @Override
+    public void onCreate(SQLiteDatabase database) {
+        database.execSQL("CREATE TABLE IF NOT EXISTS COURSES(" +
+                "id INTEGER PRIMARY KEY, " +
+                "player TEXT NOT NULL, " +
+                "score DOUBLE);");
+    }
 
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        Log.i(TAG, "Upgrading database from version " + oldVersion + " to "
+                + newVersion);
+        db.execSQL("DROP TABLE IF EXISTS STUDENTS");
+        db.execSQL("DROP TABLE IF EXISTS COURSES");
+        onCreate(db);
+    }
 }
