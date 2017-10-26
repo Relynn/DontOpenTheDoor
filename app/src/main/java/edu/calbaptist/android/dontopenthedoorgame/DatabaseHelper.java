@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ import java.util.List;
  * Created by lynnreilly on 10/25/17.
  */
 
-public class DatabaseHelper {
+public class DatabaseHelper extends SQLiteOpenHelper{
 
     private static final String TAG = "DatabaseHelper";
 
@@ -37,6 +38,11 @@ public class DatabaseHelper {
 
     public void open() throws SQLException {
         database = getWritableDatabase();
+
+        database.execSQL("CREATE TABLE IF NOT EXISTS PLAYERS(" +
+                "id INTEGER PRIMARY KEY, " +
+                "player TEXT NOT NULL, " +
+                "code DOUBLE);");
     }
 
     public void close() {
@@ -61,16 +67,16 @@ public class DatabaseHelper {
 
 
     public List<Player> getAllPlayers() {
-        List<Player> player = new ArrayList<Student>();
+        List<Player> player = new ArrayList<Player>();
 
         Cursor cursor = database.rawQuery("select * from players", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            Player student = new Player();
-            student.setId(cursor.getLong(0));
-            student.setPlayer(cursor.getString(1));
-            student.setScore(cursor.getString(2));
-            player.add(student);
+            Player p = new Player();
+            p.setId(cursor.getLong(0));
+            p.setPlayer(cursor.getString(1));
+            p.setScore(cursor.getDouble(2));
+            player.add(p);
             cursor.moveToNext();
         }
         cursor.close();
@@ -79,18 +85,19 @@ public class DatabaseHelper {
 
     @Override
     public void onCreate(SQLiteDatabase database) {
-        database.execSQL("CREATE TABLE IF NOT EXISTS COURSES(" +
+        database.execSQL("CREATE TABLE IF NOT EXISTS PLAYERS(" +
                 "id INTEGER PRIMARY KEY, " +
                 "player TEXT NOT NULL, " +
-                "score DOUBLE);");
+                "code DOUBLE);");
     }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         Log.i(TAG, "Upgrading database from version " + oldVersion + " to "
                 + newVersion);
-        db.execSQL("DROP TABLE IF EXISTS STUDENTS");
-        db.execSQL("DROP TABLE IF EXISTS COURSES");
+        db.execSQL("DROP TABLE IF EXISTS PLAYERS");
         onCreate(db);
     }
+
 }
