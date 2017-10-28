@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/DontOpenTheDoor.iml" filepath="$PROJECT_DIR$/DontOpenTheDoor.iml" />
       <module fileurl="file://$PROJECT_DIR$/DontOpenTheDoorGame.iml" filepath="$PROJECT_DIR$/DontOpenTheDoorGame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
