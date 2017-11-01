@@ -21,4 +21,8 @@ public class HomeScreenMainActivity extends AppCompatActivity {
         setContentView(new GamePlayActivity(this)); // Brand new surface view to render game rather than xml
 
     }
+    public void LeaderboardButtonClick(View view) {
+        setContentView(R.layout.activity_share); // Goes to leaderboard
+
+    }
 }
