@@ -1,6 +1,5 @@
 package edu.calbaptist.android.dontopenthedoorgame;
 
-import android.app.ListFragment;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -8,7 +7,6 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ArrayAdapter;
 
 public class HomeScreenMainActivity extends AppCompatActivity {
 
@@ -44,7 +42,7 @@ public class HomeScreenMainActivity extends AppCompatActivity {
     }
 
     public void LeaderboardButtonClick(View view) {
-        setContentView(R.layout.activity_share); // Goes to leaderboard
+        setContentView(R.layout.activity_leaderboard); // Goes to leaderboard
 
     }
 
