@@ -1,55 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:app="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@drawable/wood"
-              android:gravity="center"
-              android:orientation="vertical">
+              android:layout_height="wrap_content"
+              android:orientation="horizontal">
 
+    <ImageButton
+        android:id="@+id/volume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:maxHeight="42dp"
+        android:maxWidth="42dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/sound"/>
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="141dp"
-        app:srcCompat="@drawable/logo"/>
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:maxHeight="42dp"
+        android:maxWidth="42dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/music"/>
+
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/wood"
         android:gravity="center"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/play_button"
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="141dp"
+            app:srcCompat="@drawable/logo"/>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/colorAccent"
-            android:elevation="24dp"
             android:gravity="center"
-            android:onClick="PlayButtonClick"
+            android:orientation="vertical">
 
-            android:orientation="vertical"
-            android:text="PLAY"
-            android:textColor="@android:color/background_light"
-            android:textSize="18sp"/>
+            <Button
+                android:id="@+id/play_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorAccent"
+                android:elevation="24dp"
+                android:gravity="center"
+                android:onClick="PlayButtonClick"
+
+                android:orientation="vertical"
+                android:text="PLAY"
+                android:textColor="@android:color/background_light"
+                android:textSize="18sp"/>
 
 
-        <Button
-            android:id="@+id/leaderboard_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@color/colorAccent"
-            android:gravity="center"
-            android:onClick="LeaderboardButtonClick"
-            android:paddingLeft="24dp"
-            android:paddingRight="24dp"
-            android:text="HIGH SCORES"
-            android:textColor="@android:color/background_light"
-            android:textSize="18sp"/>
+            <Button
+                android:id="@+id/leaderboard_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorAccent"
+                android:gravity="center"
+                android:onClick="LeaderboardButtonClick"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:text="HIGH SCORES"
+                android:textColor="@android:color/background_light"
+                android:textSize="18sp"/>
 
+        </LinearLayout>
 
     </LinearLayout>
 </LinearLayout>
