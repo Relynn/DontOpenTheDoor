@@ -29,7 +29,7 @@ public class HomeScreenMainActivity extends AppCompatActivity {
 //        adapter.notifyDataSetChanged();
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.toolbar_main, menu);
+        //inflater.inflate(R.menu.toolbar_main, menu);
         return true;
     }
 
