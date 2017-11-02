@@ -6,6 +6,4 @@
     <string name="play_button">PLAY</string>
     <string name="game_title">Don\'t Open the Door</string>
     <string name="leaderboard_button">LEADERBOARD</string>
-    <string name="leaderboard_title">leaderboard</string>
-    <string name="game_name">gameName</string>
 </resources>
