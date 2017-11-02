@@ -2,6 +2,8 @@ package edu.calbaptist.android.dontopenthedoorgame;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -14,6 +16,14 @@ public class HomeScreenMainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_home_screen_main); // Brand new surface view to render game rather than xml
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.toolbar_main, menu);
+        return true;
+    }
+
     public void PlayButtonClick(View view) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);  // Removes title
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
@@ -21,8 +31,10 @@ public class HomeScreenMainActivity extends AppCompatActivity {
         setContentView(new GamePlayActivity(this)); // Brand new surface view to render game rather than xml
 
     }
+
     public void LeaderboardButtonClick(View view) {
         setContentView(R.layout.activity_share); // Goes to leaderboard
 
     }
+
 }
