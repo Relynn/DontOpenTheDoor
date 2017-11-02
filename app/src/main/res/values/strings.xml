@@ -7,4 +7,7 @@
     <string name="leaderboard_button">LEADERBOARD</string>
     <string name="play_button">PLAY</string>
     <string name="high_scores_button">HIGH SCORES</string>
+    <string name="easy_button">EASY</string>
+    <string name="medium_button">MEDIUM</string>
+    <string name="hard_button">HARD</string>
 </resources>
