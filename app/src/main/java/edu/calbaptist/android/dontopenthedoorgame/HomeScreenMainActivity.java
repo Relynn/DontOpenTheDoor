@@ -24,15 +24,10 @@ public class HomeScreenMainActivity extends AppCompatActivity {
         ListFragment listFragment = (ListFragment) getFragmentManager().findFragmentById(R.id.listFragment);
 
 
-        //ListFragment listFragment2 = (ListFragment) findViewById(R.id.listFragment2);
         ArrayAdapter adapter = (ArrayAdapter) listFragment.getListAdapter();
-        //ArrayAdapter adapter2 = (ArrayAdapter) listFragment2.getListAdapter();
         adapter.clear();
-        //adapter2.clear();
         adapter.addAll(dbHelper.getAllPlayers());
-        //adapter2.addAll(dbHelper.getAllCourses());
         adapter.notifyDataSetChanged();
-        //adapter2.notifyDataSetChanged();
     }
     public void PlayButtonClick(View view) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);  // Removes title

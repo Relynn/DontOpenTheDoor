@@ -25,11 +25,11 @@
             android:id="@+id/play_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:background="@color/colorAccent"
             android:elevation="24dp"
             android:gravity="center"
             android:onClick="PlayButtonClick"
+            android:orientation="vertical"
             android:text="@string/play_button"
             android:textColor="@android:color/background_light"
             android:textSize="18sp"/>
@@ -45,7 +45,7 @@
             android:onClick="LeaderboardButtonClick"
             android:paddingLeft="24dp"
             android:paddingRight="24dp"
-            android:text="@string/leaderboard_button"
+            android:text="HIGH SCORES"
             android:textColor="@android:color/background_light"
             android:textSize="18sp"/>
 
