@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:android="http://schemas.android.com/apk/res/android"
+      app:itemTextColor="@color/colorAccent">
+
+    “xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/volume_on"
+        android:enabled="true"
+        android:icon="@drawable/ic_menu_sound"
+        android:title="@string/volume_on"
+        android:visible="true"
+        app:showAsAction="ifRoom|withText"/>”
+</menu>

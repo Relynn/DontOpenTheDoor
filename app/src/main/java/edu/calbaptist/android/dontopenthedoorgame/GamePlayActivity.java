@@ -1,14 +1,17 @@
 package edu.calbaptist.android.dontopenthedoorgame;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
+import android.view.SurfaceHolder;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 public class GamePlayActivity extends Activity {
+
 
 
     @Override
@@ -27,11 +30,11 @@ public class GamePlayActivity extends Activity {
                 mSaveScore.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if(!mPlayerName.getText().toString().isEmpty()) {
+                        if (!mPlayerName.getText().toString().isEmpty()) {
                             Toast.makeText(GamePlayActivity.this,
                                     R.string.success_save_msg,
                                     Toast.LENGTH_SHORT).show();
-                        }else{
+                        } else {
                             Toast.makeText(GamePlayActivity.this,
                                     R.string.error_save_msg,
                                     Toast.LENGTH_SHORT).show();
@@ -43,11 +46,6 @@ public class GamePlayActivity extends Activity {
                 AlertDialog dialog = mBuilder.create();
                 dialog.show();
             }
-
         });
-
     }
-
-
-
 }
