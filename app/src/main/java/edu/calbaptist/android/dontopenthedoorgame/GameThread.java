@@ -9,5 +9,11 @@ package edu.calbaptist.android.dontopenthedoorgame;
  */
 
 //public class GameThread extends Thread {
+//    public void run() {
+//        Log.d(TAG, "Starting game loop");
 //
+//        long beginTime; // Time when the cycle begun
+//        int endTime;    // Time (ms) when game
+//
+//    }
 //}
