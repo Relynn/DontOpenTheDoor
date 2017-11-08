@@ -10,11 +10,10 @@ import android.view.View;
 public class Leaderboard extends Activity {
 
     public void ContinueButtonClick(View view) {
-        setContentView(R.layout.activity_home_screen_main); // Brand new surface view to render game rather than xml
+        setContentView(R.layout.activity_home_screen_main);
 
     }
     public void ShareButtonClick(View view) {
-      //  setContentView(R.layout.activity_home_screen_main); // Brand new surface view to render game rather than xml
 
     }
 }

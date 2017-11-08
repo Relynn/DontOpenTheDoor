@@ -6,4 +6,6 @@
     <string name="play_button">PLAY</string>
     <string name="game_title">Don\'t Open the Door</string>
     <string name="leaderboard_button">LEADERBOARD</string>
+    <string name="success_save_msg">Save Score successful</string>
+    <string name="error_save_msg">Enter a name for Player to continue</string>
 </resources>

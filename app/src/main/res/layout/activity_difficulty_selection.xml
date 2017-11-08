@@ -4,9 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/wood"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="edu.calbaptist.android.dontopenthedoorgame.DifficultyActivity">
 
     <Button
         android:id="@+id/easy_button"
@@ -14,7 +16,8 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:text="EASY"
-        android:textSize="18sp"/>
+        android:textSize="18sp"
+        android:onClick="EasyButtonClick"/>
 
     <Button
         android:id="@+id/medium_button"
@@ -25,7 +28,8 @@
         android:paddingLeft="24dp"
         android:paddingRight="24dp"
         android:layout_marginTop="20dp"
-        android:textSize="18sp"/>
+        android:textSize="18sp"
+        android:onClick="MediumButtonClick"/>
 
     <Button
         android:id="@+id/hard_button"
@@ -34,5 +38,6 @@
         android:background="@color/colorPrimary"
         android:text="HARD"
         android:layout_marginTop="20dp"
-        android:textSize="18sp"/>
+        android:textSize="18sp"
+        android:onClick="HardButtonClick"/>
 </LinearLayout>

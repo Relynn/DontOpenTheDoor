@@ -8,6 +8,6 @@ package edu.calbaptist.android.dontopenthedoorgame;
  * that run per frame.
  */
 
-public class GameThread extends Thread {
-
-}
+//public class GameThread extends Thread {
+//
+//}
