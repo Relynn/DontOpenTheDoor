@@ -13,13 +13,13 @@
 
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:background="@drawable/music"/>
+        android:background="@drawable/ic_music_note"/>
 
     <ImageButton
         android:id="@+id/sound"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:background="@drawable/sound"/>
+        android:background="@drawable/menu_black_sound"/>
 
 
     <LinearLayout
