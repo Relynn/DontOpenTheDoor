@@ -16,8 +16,6 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".GamePlayActivity">
-        </activity>
         <activity android:name=".ThemesActivity">
         </activity>
         <activity android:name=".ToolbarActivity">

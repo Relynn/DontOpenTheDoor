@@ -1,53 +1,53 @@
 package edu.calbaptist.android.dontopenthedoorgame;
 
-import android.content.Context;
-import android.view.SurfaceHolder;
-import android.view.SurfaceView;
+import android.app.Activity;
+import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
-public class GamePlayActivity extends SurfaceView implements SurfaceHolder.Callback {
+public class GamePlayActivity extends Activity {
 
-    private GameThread thread;  // Initialize GameThread
-
-    /**
-     * Constructor
-     * @param context
-     */
-    public GamePlayActivity(Context context) {
-        super(context);
-
-        getHolder().addCallback(this);  // Callback is set to the SurfaceView so events get triggered from here
-
-        thread = new GameThread(getHolder(), this);
-
-        setFocusable(true);
-    }
 
     @Override
-    public void surfaceCreated(SurfaceHolder holder) {
-        thread.setRunning(true);    // When surface is created thread is set to true
-        thread.start();             // Starts thread
-    }
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-    @Override
-    public void surfaceChanged (SurfaceHolder holder, int format, int width, int height) {
+        Button mDialogNewScore = (Button) findViewById(R.id.new_score_test);
+        mDialogNewScore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder mBuilder = new AlertDialog.Builder(GamePlayActivity.this);
+                View mView = getLayoutInflater().inflate(R.layout.dialog_new_high_score, null);
+                final EditText mPlayerName = (EditText) mView.findViewById(R.id.player_name);
+                Button mSaveScore = (Button) mView.findViewById(R.id.save_score_button);
 
-    }
+                mSaveScore.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if(!mPlayerName.getText().toString().isEmpty()) {
+                            Toast.makeText(GamePlayActivity.this,
+                                    R.string.success_save_msg,
+                                    Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(GamePlayActivity.this,
+                                    R.string.error_save_msg,
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
 
-    @Override
-    public void surfaceDestroyed(SurfaceHolder holder) {
-        boolean retry = true;
-        while (retry) {
-            try{
-                thread.setRunning(false);
-                thread.join();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+                mBuilder.setView(mView);
+                AlertDialog dialog = mBuilder.create();
+                dialog.show();
             }
-            retry = false;
-        }
-    }
 
-    public void update() {
+        });
 
     }
+
+
+
 }
