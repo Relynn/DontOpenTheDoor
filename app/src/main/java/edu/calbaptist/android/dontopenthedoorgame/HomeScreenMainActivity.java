@@ -2,6 +2,8 @@ package edu.calbaptist.android.dontopenthedoorgame;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 
 public class HomeScreenMainActivity extends Activity {
@@ -10,6 +12,23 @@ public class HomeScreenMainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen_main); // Home Screen
+    }
+
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        ListFragment listFragment = (ListFragment) getFragmentManager().findFragmentById(R.id.listFragment);
+//
+//
+//        ArrayAdapter adapter = (ArrayAdapter) listFragment.getListAdapter();
+//        adapter.clear();
+//        adapter.addAll(dbHelper.getAllPlayers());
+//        adapter.notifyDataSetChanged();
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        //inflater.inflate(R.menu.toolbar_main, menu);
+        return true;
     }
 
     public void PlayButtonClick(View view) {

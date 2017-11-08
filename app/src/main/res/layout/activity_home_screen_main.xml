@@ -12,9 +12,10 @@
 
 
     <ImageView
-        android:id="@+id/logo"
+        android:id="@+id/game_logo"
         android:layout_width="match_parent"
         android:layout_height="141dp"
+        android:contentDescription="Game Logo"
         app:srcCompat="@drawable/logo"/>
 
     <LinearLayout
@@ -28,10 +29,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/colorAccent"
+            android:contentDescription="@string/play_b"
             android:gravity="center"
             android:onClick="PlayButtonClick"
             android:orientation="vertical"
-            android:text="PLAY"
+            android:text="Play"
             android:textColor="@android:color/background_light"
             android:textSize="18sp"/>
 
@@ -45,7 +47,7 @@
             android:onClick="LeaderboardButtonClick"
             android:paddingLeft="24dp"
             android:paddingRight="24dp"
-            android:text="HIGH SCORES"
+            android:text="@string/high_scores_button"
             android:textColor="@android:color/background_light"
             android:textSize="18sp"/>
 
