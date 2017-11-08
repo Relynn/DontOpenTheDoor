@@ -8,6 +8,7 @@ public class GamePlayActivity extends SurfaceView implements SurfaceHolder.Callb
 
     private GameThread thread;  // Initialize GameThread
 
+
     /**
      * Constructor
      * @param context
@@ -17,7 +18,7 @@ public class GamePlayActivity extends SurfaceView implements SurfaceHolder.Callb
 
         getHolder().addCallback(this);  // Callback is set to the SurfaceView so events get triggered from here
 
-        thread = new GameThread(getHolder(), this);
+       // thread = new GameThread(getHolder(), this);
 
         setFocusable(true);
     }
@@ -44,7 +45,7 @@ public class GamePlayActivity extends SurfaceView implements SurfaceHolder.Callb
                 e.printStackTrace();
             }
             retry = false;
-        }
+       }
     }
 
     public void update() {

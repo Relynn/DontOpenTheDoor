@@ -11,4 +11,6 @@
     <string name="medium_button">MEDIUM</string>
     <string name="hard_button">HARD</string>
     <string name="play_b">Play button</string>
+    <string name="volume_on">Volume On</string>
+    <string name="volume_off">Volume Off</string>
 </resources>
