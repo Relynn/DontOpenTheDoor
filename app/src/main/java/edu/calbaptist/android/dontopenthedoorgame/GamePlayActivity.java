@@ -1,16 +1,20 @@
 package edu.calbaptist.android.dontopenthedoorgame;
 
 import android.app.Activity;
-import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
 
 public class GamePlayActivity extends Activity {
 
+//    boolean running = true;
+//    while (!running)
+//    {
+//        updateGameState();
+//        displayGameState();
+//    }
 
+/**
+ *
+ * Tests dialog for New High Score pop up
+ *
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +51,7 @@ public class GamePlayActivity extends Activity {
         });
 
     }
-
+**/
 
 
 }
