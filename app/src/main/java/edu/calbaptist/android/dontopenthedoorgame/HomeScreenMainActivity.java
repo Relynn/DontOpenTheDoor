@@ -7,12 +7,17 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
+import android.view.Window;
+import android.view.WindowManager;
+
 
 public class HomeScreenMainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_home_screen_main); // Home Screen
         Button playButton = (Button)findViewById(R.id.play_button);
         Button leaderboardButton = (Button)findViewById(R.id.leaderboard_button);
@@ -35,7 +40,7 @@ public class HomeScreenMainActivity extends Activity {
 //        adapter.notifyDataSetChanged();
 
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
+//        MenuInflater inflater = getMenuInflater();
         //inflater.inflate(R.menu.toolbar_main, menu);
         return true;
     }

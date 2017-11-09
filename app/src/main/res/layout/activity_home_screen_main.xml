@@ -2,28 +2,38 @@
 
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    xmlns:tools="http://schemas.android.com/tools"
-                    android:background="@drawable/wood"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    tools:context="edu.calbaptist.android.dontopenthedoorgame.HomeScreenMainActivity">
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/wood"
+              tools:context="edu.calbaptist.android.dontopenthedoorgame.HomeScreenMainActivity">
 
+    <ImageButton
 
-    <ImageView
-        android:id="@+id/game_logo"
-        android:layout_width="match_parent"
-        android:layout_height="141dp"
-        android:contentDescription="Game Logo"
-        app:srcCompat="@drawable/logo"/>
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/ic_music_note"/>
+
+    <ImageButton
+        android:id="@+id/sound"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/menu_black_sound"/>
+
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
+        android:layout_height="424dp"
+        android:gravity="bottom|center"
         android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/game_logo"
+            android:layout_width="match_parent"
+            android:layout_height="141dp"
+            android:contentDescription="Game Logo"
+            app:srcCompat="@drawable/logo"/>
 
         <Button
             android:id="@+id/play_button"
