@@ -16,9 +16,16 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".DifficultyActivity">
+        </activity>
         <activity android:name=".ThemesActivity">
         </activity>
         <activity android:name=".ShareActivity">
+        </activity>
+        <activity
+            android:name=".PlayGame"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@style/FullscreenTheme">
         </activity>
     </application>
 

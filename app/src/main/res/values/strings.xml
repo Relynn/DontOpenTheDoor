@@ -15,4 +15,9 @@
     <string name="play_b">Play button</string>
     <string name="volume_on">Volume On</string>
     <string name="volume_off">Volume Off</string>
+    <string name="start">Start</string>
+
+    <string name="title_activity_play_game">PlayGame</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>
