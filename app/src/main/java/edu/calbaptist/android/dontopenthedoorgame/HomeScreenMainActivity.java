@@ -7,9 +7,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
+import android.widget.Button;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+
 
 public class HomeScreenMainActivity extends Activity {
 
@@ -21,6 +23,8 @@ public class HomeScreenMainActivity extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_home_screen_main); // Home Screen
+        Button playButton = (Button)findViewById(R.id.play_button);
+        Button leaderboardButton = (Button)findViewById(R.id.leaderboard_button);
 
         //Adds Background Music
         MediaPlayer player = MediaPlayer.create(this, R.raw.scary);
