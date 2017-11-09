@@ -1,6 +1,7 @@
 package edu.calbaptist.android.dontopenthedoorgame;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,8 +9,11 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 
 public class HomeScreenMainActivity extends Activity {
+
+    Button play_bttn = (Button) findViewById(R.id.play_bttn);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +46,10 @@ public class HomeScreenMainActivity extends Activity {
     }
 
     public void PlayButtonClick(View view) {
-        setContentView(R.layout.activity_difficulty_selection); // Goes to game difficulty selection: {easy, medium, hard}
+        //setContentView(R.layout.activity_difficulty_selection); // Goes to game difficulty selection: {easy, medium, hard}
 
+        Intent intent = new Intent(HomeScreenMainActivity.this, DifficultyActivity.class);
+        startActivity(intent);
 }
 
     public void LeaderboardButtonClick(View view) {

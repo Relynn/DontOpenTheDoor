@@ -1,6 +1,7 @@
 package edu.calbaptist.android.dontopenthedoorgame;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -26,7 +27,10 @@ public class DifficultyActivity extends Activity {
     public void MediumButtonClick(View view) {
         setContentView(R.layout.activity_medium_gameplay);
     }
+
     public void HardButtonClick(View view) {
-        setContentView(R.layout.activity_hard_gameplay);
+        //setContentView(R.layout.activity_hard_gameplay);
+        Intent intent = new Intent(DifficultyActivity.this, PlayGame.class);
+        startActivity(intent);
     }
 }
