@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
+import android.widget.Button;
 
 public class HomeScreenMainActivity extends Activity {
 
@@ -13,6 +14,8 @@ public class HomeScreenMainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen_main); // Home Screen
+        Button playButton = (Button)findViewById(R.id.play_button);
+        Button leaderboardButton = (Button)findViewById(R.id.leaderboard_button);
 
         //Adds Background Music
         MediaPlayer player = MediaPlayer.create(this, R.raw.scary);
