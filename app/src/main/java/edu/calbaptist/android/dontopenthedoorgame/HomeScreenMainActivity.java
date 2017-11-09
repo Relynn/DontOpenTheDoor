@@ -15,7 +15,7 @@ import android.widget.Button;
 
 public class HomeScreenMainActivity extends Activity {
 
-    Button play_bttn = (Button) findViewById(R.id.play_bttn);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,8 +23,8 @@ public class HomeScreenMainActivity extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_home_screen_main); // Home Screen
-        Button playButton = (Button)findViewById(R.id.play_button);
         Button leaderboardButton = (Button)findViewById(R.id.leaderboard_button);
+        Button play_bttn = (Button) findViewById(R.id.play_bttn);
 
         //Adds Background Music
         MediaPlayer player = MediaPlayer.create(this, R.raw.scary);

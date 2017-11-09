@@ -11,7 +11,7 @@ public class GamePlayActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen_main); // Home Screen
-        Button playButton = (Button)findViewById(R.id.play_button);
+        Button playButton = (Button)findViewById(R.id.play_bttn);
         Button leaderboardButton = (Button)findViewById(R.id.leaderboard_button);
 
 

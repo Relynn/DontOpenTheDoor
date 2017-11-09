@@ -14,14 +14,17 @@ import android.view.WindowManager;
 
 public class DifficultyActivity extends Activity {
 
-    Button easyButton = (Button)findViewById(R.id.easy_button);
-    Button mediumButton = (Button)findViewById(R.id.medium_button);
-    Button hardButton = (Button)findViewById(R.id.hard_button);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.activity_difficulty_selection);
+
+        Button easyButton = (Button)findViewById(R.id.easy_button);
+        Button mediumButton = (Button)findViewById(R.id.medium_button);
+        Button hardButton = (Button)findViewById(R.id.hard_button);
 
     }
 
