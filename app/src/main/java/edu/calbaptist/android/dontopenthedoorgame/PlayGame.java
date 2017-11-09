@@ -3,6 +3,7 @@ package edu.calbaptist.android.dontopenthedoorgame;
 import android.annotation.SuppressLint;
 import android.graphics.drawable.AnimationDrawable;
 import android.media.Image;
+import android.media.MediaPlayer;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -38,6 +39,11 @@ public class PlayGame extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play_game);
 
+        //Adds Background Music
+        MediaPlayer player = MediaPlayer.create(this, R.raw.scary);
+        player.setLooping(true);
+        player.start();
+
         r = new Random();
 
         start_button = (Button) findViewById(R.id.start_button);
@@ -47,10 +53,10 @@ public class PlayGame extends AppCompatActivity {
         d3 = (ImageView) findViewById(R.id.d3);
         d4 = (ImageView) findViewById(R.id.d4);
 
-        d1.setVisibility(View.INVISIBLE);
-        d2.setVisibility(View.INVISIBLE);
-        d3.setVisibility(View.INVISIBLE);
-        d4.setVisibility(View.INVISIBLE);
+        d1.setVisibility(View.VISIBLE);
+        d2.setVisibility(View.VISIBLE);
+        d3.setVisibility(View.VISIBLE);
+        d4.setVisibility(View.VISIBLE);
 
         start_button.setOnClickListener(new View.OnClickListener() {
             @Override
