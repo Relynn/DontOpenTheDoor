@@ -22,6 +22,12 @@
         </activity>
         <activity android:name=".ShareActivity">
         </activity>
+        <activity
+            android:name=".PlayGame"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_play_game"
+            android:theme="@style/FullscreenTheme">
+        </activity>
     </application>
 
 </manifest>
