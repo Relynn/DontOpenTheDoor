@@ -15,29 +15,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        android:textSize="18sp"
         android:onClick="EasyButtonClick"
-        android:text="@string/easy_button"/>
+        android:text="@string/easy_button"
+        android:textSize="18sp"
+        tools:background="@android:color/background_dark"/>
 
     <Button
         android:id="@+id/medium_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:text="@string/medium_button"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/background_dark"
+        android:onClick="MediumButtonClick"
         android:paddingLeft="24dp"
         android:paddingRight="24dp"
-        android:layout_marginTop="20dp"
-        android:textSize="18sp"
-        android:onClick="MediumButtonClick"/>
+        android:text="@string/medium_button"
+        android:textSize="18sp"/>
 
     <Button
         android:id="@+id/hard_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:text="@string/hard_button"
         android:layout_marginTop="20dp"
+        android:background="@color/colorPrimary"
+        android:onClick="HardButtonClick"
+        android:text="@string/hard_button"
         android:textSize="18sp"
-        android:onClick="HardButtonClick"/>
+        tools:background="@android:color/background_dark"/>
 </LinearLayout>
