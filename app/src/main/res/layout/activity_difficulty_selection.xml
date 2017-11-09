@@ -14,11 +14,10 @@
         android:id="@+id/easy_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:background="@android:color/background_dark"
         android:onClick="EasyButtonClick"
         android:text="@string/easy_button"
-        android:textSize="18sp"
-        tools:background="@android:color/background_dark"/>
+        android:textSize="18sp"/>
 
     <Button
         android:id="@+id/medium_button"
@@ -37,9 +36,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@color/colorPrimary"
+        android:background="@android:color/background_dark"
         android:onClick="HardButtonClick"
         android:text="@string/hard_button"
-        android:textSize="18sp"
-        tools:background="@android:color/background_dark"/>
+        android:textSize="18sp"/>
 </LinearLayout>
