@@ -35,11 +35,6 @@ public class HomeScreenMainActivity extends Activity {
 //        adapter.addAll(dbHelper.getAllPlayers());
 //        adapter.notifyDataSetChanged();
 
-    public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater inflater = getMenuInflater();
-        //inflater.inflate(R.menu.toolbar_main, menu);
-        return true;
-    }
 
     public void PlayButtonClick(View view) {
         setContentView(R.layout.activity_difficulty_selection); // Goes to game difficulty selection: {easy, medium, hard}
