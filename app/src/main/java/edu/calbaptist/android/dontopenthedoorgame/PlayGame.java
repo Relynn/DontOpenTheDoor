@@ -3,6 +3,7 @@ package edu.calbaptist.android.dontopenthedoorgame;
 import android.annotation.SuppressLint;
 import android.graphics.drawable.AnimationDrawable;
 import android.media.Image;
+import android.media.MediaPlayer;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -19,11 +20,16 @@ import android.widget.Toast;
 import java.util.Random;
 
 /**
+ * Created by Anthony Gomez
  *
+ * PlayGame activity is launched by selecting the hard difficulty option after selecting Play Game.
+ * Creates 4 clickable image views and creates the game activity. Saves highest score reached in integer
+ * score.
  */
 public class PlayGame extends AppCompatActivity {
 
     ImageView d1, d2, d3, d4;
+    ImageView a1, a2, a3, a4;
     TextView tv_score;
     Button start_button;
     Random r;
@@ -38,6 +44,14 @@ public class PlayGame extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play_game);
 
+        //Adds Background Music
+        MediaPlayer player = MediaPlayer.create(this, R.raw.scary);
+        player.setLooping(true);
+        player.start();
+
+        //Creates Jump Scare audio File
+        MediaPlayer bang = MediaPlayer.create(this, R.raw.bang);
+
         r = new Random();
 
         start_button = (Button) findViewById(R.id.start_button);
@@ -46,11 +60,20 @@ public class PlayGame extends AppCompatActivity {
         d2 = (ImageView) findViewById(R.id.d2);
         d3 = (ImageView) findViewById(R.id.d3);
         d4 = (ImageView) findViewById(R.id.d4);
+        a1 = (ImageView) findViewById(R.id.a1);
+        a2 = (ImageView) findViewById(R.id.a2);
+        a3 = (ImageView) findViewById(R.id.a3);
+        a4 = (ImageView) findViewById(R.id.a4);
 
-        d1.setVisibility(View.INVISIBLE);
-        d2.setVisibility(View.INVISIBLE);
-        d3.setVisibility(View.INVISIBLE);
-        d4.setVisibility(View.INVISIBLE);
+        d1.setVisibility(View.VISIBLE);
+        d2.setVisibility(View.VISIBLE);
+        d3.setVisibility(View.VISIBLE);
+        d4.setVisibility(View.VISIBLE);
+        a1.setVisibility(View.INVISIBLE);
+        a2.setVisibility(View.INVISIBLE);
+        a3.setVisibility(View.INVISIBLE);
+        a4.setVisibility(View.INVISIBLE);
+
 
         start_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,7 +107,7 @@ public class PlayGame extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 templeft = 1;
-                d2.setImageResource(R.drawable.door2);
+                d2.setImageResource(R.drawable.door1);
                 score=score+1;
                 tv_score.setText("SCORE: " + score);
                 d2.setEnabled(false);
@@ -95,7 +118,7 @@ public class PlayGame extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 templeft = 1;
-                d3.setImageResource(R.drawable.door3);
+                d3.setImageResource(R.drawable.door1);
                 score=score+1;
                 tv_score.setText("SCORE: " + score);
                 d3.setEnabled(false);
@@ -105,7 +128,7 @@ public class PlayGame extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 templeft = 1;
-                d4.setImageResource(R.drawable.door4);
+                d4.setImageResource(R.drawable.door1);
                 score=score+1;
                 tv_score.setText("SCORE: " + score);
                 d4.setEnabled(false);
@@ -115,6 +138,17 @@ public class PlayGame extends AppCompatActivity {
     }
 
     private void theGameActions(){
+
+        //Adds Background Music
+        MediaPlayer player = MediaPlayer.create(this, R.raw.scary);
+        player.setLooping(true);
+        player.start();
+
+        d1.setImageResource(R.drawable.door1);
+        d2.setImageResource(R.drawable.door1);
+        d3.setImageResource(R.drawable.door1);
+        d4.setImageResource(R.drawable.door1);
+
         if(score < 10 ){
             fps = 1000;
         }
@@ -158,18 +192,22 @@ public class PlayGame extends AppCompatActivity {
         if(which == 1){
             d1.setImageDrawable(an);
             d1.setVisibility(View.VISIBLE);
+            a1.setVisibility(View.VISIBLE);
             d1.setEnabled(true);
         } else if(which == 2){
             d2.setImageDrawable(an);
             d2.setVisibility(View.VISIBLE);
+            a2.setVisibility(View.VISIBLE);
             d2.setEnabled(true);
         } else if(which == 3){
             d3.setImageDrawable(an);
             d3.setVisibility(View.VISIBLE);
+            a3.setVisibility(View.VISIBLE);
             d3.setEnabled(true);
         } else if(which == 4){
             d4.setImageDrawable(an);
             d4.setVisibility(View.VISIBLE);
+            a4.setVisibility(View.VISIBLE);
             d4.setEnabled(true);
         }
 
@@ -180,10 +218,15 @@ public class PlayGame extends AppCompatActivity {
             @Override
             public void run() {
 
-                d1.setVisibility(View.INVISIBLE);
-                d2.setVisibility(View.INVISIBLE);
-                d3.setVisibility(View.INVISIBLE);
-                d4.setVisibility(View.INVISIBLE);
+                d1.setVisibility(View.VISIBLE);
+                d2.setVisibility(View.VISIBLE);
+                d3.setVisibility(View.VISIBLE);
+                d4.setVisibility(View.VISIBLE);
+
+                a1.setVisibility(View.INVISIBLE);
+                a2.setVisibility(View.INVISIBLE);
+                a3.setVisibility(View.INVISIBLE);
+                a4.setVisibility(View.INVISIBLE);
 
                 d1.setEnabled(false);
                 d2.setEnabled(false);
@@ -198,7 +241,12 @@ public class PlayGame extends AppCompatActivity {
 
                 if(left== 0){
                     Toast.makeText(PlayGame.this, "GAME OVER", Toast.LENGTH_SHORT).show();
+
+                    //Creates Jump Scare audio File
+                    MediaPlayer bang = MediaPlayer.create(PlayGame.this, R.raw.bang);
+                    bang.start();
                     start_button.setEnabled(true);
+
                 } else if(left > 0){
                     theGameActions();
                 }

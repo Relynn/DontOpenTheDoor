@@ -1,44 +1,41 @@
 package edu.calbaptist.android.dontopenthedoorgame;
 
+import java.util.UUID;
+
 /**
  * Created by lynnreilly on 10/25/17.
  */
 
 public class Player {
-    private long id;
-    private String player;
-    private double score;
+    private UUID mId;
+    private String mPlayer;
+    private double mScore;
 
     public Player() {
+        this(UUID.randomUUID());
     }
 
-    public Player (long id, String player, double score) {
-        this.id = id;
-        this.player = player;
-        this.score = score;
+    public Player (UUID id) {
+        mId = id;
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
+    public UUID getId() {
+        return mId;
     }
 
     public String getPlayer() {
-        return player;
+        return mPlayer;
     }
 
     public void setPlayer(String player) {
-        this.player = player;
+        mPlayer = player;
     }
 
     public double getScore() {
-        return score;
+        return mScore;
     }
 
     public void setScore(double score) {
-        this.score = score;
+        mScore = score;
     }
 }
