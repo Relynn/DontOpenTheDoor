@@ -35,6 +35,6 @@ public class DifficultyActivity extends Activity {
     }
     public void HardButtonClick(View view) {
 
-        setContentView(R.layout.activity_hard_gameplay);
+        setContentView(R.layout.activity_play_game);
     }
 }
