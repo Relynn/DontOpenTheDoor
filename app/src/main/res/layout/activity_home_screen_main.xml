@@ -36,12 +36,13 @@
             app:srcCompat="@drawable/logo"/>
 
         <Button
-            android:id="@+id/play_bttn"
+            android:id="@+id/play_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/colorAccent"
             android:contentDescription="@string/play_b"
-            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_centerHorizontal="true"
             android:onClick="PlayButtonClick"
             android:orientation="vertical"
             android:text="Play"
@@ -53,8 +54,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
             android:background="@color/colorAccent"
-            android:gravity="center"
+            android:layout_centerHorizontal="true"
             android:onClick="LeaderboardButtonClick"
             android:paddingLeft="24dp"
             android:paddingRight="24dp"

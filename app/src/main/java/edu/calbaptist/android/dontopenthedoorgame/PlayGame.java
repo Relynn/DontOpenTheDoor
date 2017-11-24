@@ -1,23 +1,20 @@
 package edu.calbaptist.android.dontopenthedoorgame;
 
-import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
-import android.media.Image;
 import android.media.MediaPlayer;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.MotionEvent;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.RadioButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Random;
 
@@ -39,14 +36,18 @@ public class PlayGame extends AppCompatActivity {
     int which = 0, whichsave = 0;
     int templeft = 0, left = 1;
 
+
     AnimationDrawable an;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_play_game);
+
+        setContentView(R.layout.activity_hard_gameplay);
 
         //Adds Background Music
         MediaPlayer player = MediaPlayer.create(this, R.raw.scary);
@@ -77,7 +78,6 @@ public class PlayGame extends AppCompatActivity {
         a2.setVisibility(View.INVISIBLE);
         a3.setVisibility(View.INVISIBLE);
         a4.setVisibility(View.INVISIBLE);
-
 
         start_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,6 +138,7 @@ public class PlayGame extends AppCompatActivity {
 
             }
         });
+
     }
 
     private void theGameActions(){
@@ -243,7 +244,24 @@ public class PlayGame extends AppCompatActivity {
                 }
 
                 if(left== 0){
-                    Toast.makeText(PlayGame.this, "GAME OVER", Toast.LENGTH_SHORT).show();
+
+                    AlertDialog.Builder mBuilder = new AlertDialog.Builder(PlayGame.this);
+                    View mView = getLayoutInflater().inflate(R.layout.dialog_score, null);
+                    ImageButton mContinue = (ImageButton) mView.findViewById(R.id.continue_leaderboard_button);
+                    TextView scor = (TextView) mView.findViewById(R.id.score_label);
+                    scor.setText("Score: " + score);
+                    mContinue.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(PlayGame.this, Leaderboard.class);
+                            startActivity(intent);
+                            setContentView(R.layout.activity_leaderboard);
+                        }
+                    });
+
+                    mBuilder.setView(mView);
+                    AlertDialog dialog = mBuilder.create();
+                    dialog.show();
 
                     //Creates Jump Scare audio File
                     MediaPlayer bang = MediaPlayer.create(PlayGame.this, R.raw.bang);
@@ -257,5 +275,4 @@ public class PlayGame extends AppCompatActivity {
         }, fps);
 
     }
-
 }
