@@ -4,10 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
-import android.widget.Button;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -24,25 +21,13 @@ public class HomeScreenMainActivity extends Activity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_home_screen_main); // Home Screen
         Button leaderboardButton = (Button)findViewById(R.id.leaderboard_button);
-        Button play_bttn = (Button) findViewById(R.id.play_bttn);
+        Button play_button = (Button) findViewById(R.id.play_button);
 
         //Adds Background Music
         MediaPlayer player = MediaPlayer.create(this, R.raw.scary);
         player.setLooping(true);
         player.start();
     }
-
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//        ListFragment listFragment = (ListFragment) getFragmentManager().findFragmentById(R.id.listFragment);
-//
-//
-//        ArrayAdapter adapter = (ArrayAdapter) listFragment.getListAdapter();
-//        adapter.clear();
-//        adapter.addAll(dbHelper.getAllPlayers());
-//        adapter.notifyDataSetChanged();
-
 
     public void PlayButtonClick(View view) {
         //setContentView(R.layout.activity_difficulty_selection); // Goes to game difficulty selection: {easy, medium, hard}
