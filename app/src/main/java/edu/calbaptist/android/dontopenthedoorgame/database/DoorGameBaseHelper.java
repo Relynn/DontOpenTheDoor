@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 
 
-import static edu.calbaptist.android.dontopenthedoorgame.database.DoorGameDbSchema.PlayerTable.*;
+import static edu.calbaptist.android.dontopenthedoorgame.database.DoorGameDbSchema.PlayerTable;
 
 /**
  * Created by lynnreilly on 11/8/17.
@@ -22,10 +22,10 @@ public class DoorGameBaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table " + NAME + ", " + " _id integer primary key autoincrement, " +
-                DoorGameDbSchema.Cols.UUID + ", " +
-                DoorGameDbSchema.Cols.PLAYER + ", " +
-                DoorGameDbSchema.Cols.SCORE + ")"
+        db.execSQL("create table " + PlayerTable.NAME + "( " + " _id integer primary key autoincrement, " +
+                PlayerTable.Cols.UUID + ", " +
+                PlayerTable.Cols.PLAYER + ", " +
+                PlayerTable.Cols.SCORE + ")"
         );
     }
 

@@ -13,9 +13,7 @@ import java.util.List;
 import java.util.UUID;
 
 import edu.calbaptist.android.dontopenthedoorgame.database.DoorGameBaseHelper;
-import edu.calbaptist.android.dontopenthedoorgame.database.DoorGameDbSchema;
-
-import static edu.calbaptist.android.dontopenthedoorgame.database.DoorGameDbSchema.PlayerTable.*;
+import edu.calbaptist.android.dontopenthedoorgame.database.DoorGameDbSchema.PlayerTable;
 
 
 public class GamePlayActivity extends Activity {
@@ -76,7 +74,7 @@ public class GamePlayActivity extends Activity {
      public void addPlayer(Player p) {
          ContentValues values = getContentValues(p);
 
-         mDatabase.insert(NAME, null, values);
+         mDatabase.insert(PlayerTable.NAME, null, values);
 
      }
 
@@ -92,16 +90,16 @@ public class GamePlayActivity extends Activity {
         String uuidString = p.getId().toString();
         ContentValues values = getContentValues(p);
 
-        mDatabase.update(NAME, values,
-                DoorGameDbSchema.Cols.UUID + " = ?",
+        mDatabase.update(PlayerTable.NAME, values,
+                PlayerTable.Cols.UUID + " = ?",
                 new String[] { uuidString });
     }
 
      private static ContentValues getContentValues(Player p) {
           ContentValues values = new ContentValues();
-          values.put(DoorGameDbSchema.Cols.UUID, p.getId().toString());
-          values.put(DoorGameDbSchema.Cols.PLAYER, p.getPlayer());
-          values.put(DoorGameDbSchema.Cols.SCORE, p.getScore());
+          values.put(PlayerTable.Cols.UUID, p.getId().toString());
+          values.put(PlayerTable.Cols.PLAYER, p.getPlayer());
+          values.put(PlayerTable.Cols.SCORE, p.getScore());
           return values;
      }
 
