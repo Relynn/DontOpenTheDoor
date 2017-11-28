@@ -7,62 +7,70 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:background="@drawable/wood"
+              android:orientation="vertical"
               tools:context="edu.calbaptist.android.dontopenthedoorgame.HomeScreenMainActivity">
 
-    <ImageButton
 
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/ic_music_note"/>
+    <TableRow
+        android:layout_width="292dp"
+        android:layout_height="71dp"
+        >
 
-    <ImageButton
-        android:id="@+id/sound"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/menu_black_sound"/>
+        <ImageButton
+            android:layout_width="64dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ic_music_note"/>
 
+        <ImageButton
+            android:id="@+id/sound"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:background="@drawable/menu_black_sound"/>
+    </TableRow>
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/game_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="5dp"
+        android:fontFamily="@font/bangers"
+        android:shadowColor="@color/colorAccent"
+        android:shadowRadius="5"
+        android:text="DON'T OPEN THE DOOR"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="@android:color/background_dark"
+        android:textSize="60sp"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/leaderboard_button"
         android:layout_width="wrap_content"
-        android:layout_height="424dp"
-        android:gravity="bottom|center"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorAccent"
+        android:onClick="LeaderboardButtonClick"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:text="@string/high_scores_button"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"/>
 
-        <ImageView
-            android:id="@+id/game_logo"
-            android:layout_width="match_parent"
-            android:layout_height="141dp"
-            android:contentDescription="Game Logo"
-            app:srcCompat="@drawable/logo"/>
+    <Button
+        android:id="@+id/play_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorAccent"
+        android:contentDescription="@string/play_b"
+        android:onClick="PlayButtonClick"
+        android:text="Play"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"/>
 
-        <Button
-            android:id="@+id/play_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/colorAccent"
-            android:contentDescription="@string/play_b"
-            android:layout_marginLeft="10dp"
-            android:layout_centerHorizontal="true"
-            android:onClick="PlayButtonClick"
-            android:orientation="vertical"
-            android:text="Play"
-            android:textColor="@android:color/background_light"
-            android:textSize="18sp"/>
-
-        <Button
-            android:id="@+id/leaderboard_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp"
-            android:background="@color/colorAccent"
-            android:layout_centerHorizontal="true"
-            android:onClick="LeaderboardButtonClick"
-            android:paddingLeft="24dp"
-            android:paddingRight="24dp"
-            android:text="@string/high_scores_button"
-            android:textColor="@android:color/background_light"
-            android:textSize="18sp"/>
-
-    </LinearLayout>
 </LinearLayout>

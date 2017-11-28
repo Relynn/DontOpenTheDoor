@@ -34,7 +34,7 @@ public class PlayGame extends AppCompatActivity {
     int which = 0, whichsave = 0;
     int templeft = 0, left = 1;
 
-
+    DatabaseHelper db;
     AnimationDrawable an;
 
     @Override
@@ -238,12 +238,11 @@ public class PlayGame extends AppCompatActivity {
                 }
 
                 if(left== 0){
-
                     AlertDialog.Builder mBuilder = new AlertDialog.Builder(PlayGame.this);
                     View mView = getLayoutInflater().inflate(R.layout.dialog_score, null);
                     ImageButton mContinue = (ImageButton) mView.findViewById(R.id.continue_leaderboard_button);
-                    TextView scor = (TextView) mView.findViewById(R.id.score_label);
-                    scor.setText("Score: " + score);
+                    TextView finalScore = (TextView) mView.findViewById(R.id.score_label);
+                    finalScore.setText("Score: " + score);
                     mContinue.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -269,4 +268,5 @@ public class PlayGame extends AppCompatActivity {
         }, fps);
 
     }
+
 }
