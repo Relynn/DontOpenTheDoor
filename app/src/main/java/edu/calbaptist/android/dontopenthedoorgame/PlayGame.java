@@ -9,6 +9,8 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -40,6 +42,11 @@ public class PlayGame extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.activity_play_game);
+
         setContentView(R.layout.activity_hard_gameplay);
 
         //Adds Background Music
@@ -84,7 +91,6 @@ public class PlayGame extends AppCompatActivity {
                     public void run() {
                         theGameActions();
                     }
-
                 }, 1000);
                 start_button.setEnabled(false);
             }
