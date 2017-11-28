@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 
 
-import static edu.calbaptist.android.dontopenthedoorgame.database.DoorGameDbSchema.PlayerTable;
+import edu.calbaptist.android.dontopenthedoorgame.database.DoorGameDbSchema.PlayerTable;
 
 /**
  * Created by lynnreilly on 11/8/17.
