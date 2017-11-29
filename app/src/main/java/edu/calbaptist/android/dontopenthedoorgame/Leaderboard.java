@@ -24,7 +24,7 @@ public class Leaderboard extends Activity {
     ArrayList<String> addArray = new ArrayList<String>();
     ListView show;
     Button bContinue;
-    Button bShare;add
+    Button bShare;
     Intent shareIntent;
     String shareMessage = "My top 3 high scores for Don't Open The Door are: "
             + ", "
