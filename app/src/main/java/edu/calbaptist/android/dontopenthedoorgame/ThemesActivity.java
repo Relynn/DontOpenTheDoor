@@ -22,24 +22,33 @@ public class ThemesActivity extends BaseActivity implements View.OnClickListener
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.fall_button:
+            case R.id.original_theme_button:
                 Utility.setTheme(getApplicationContext(), 1);
                 recreateActivity();
                 break;
-            case R.id.winter_button:
+            case R.id.fall_button:
                 Utility.setTheme(getApplicationContext(), 2);
                 recreateActivity();
                 break;
-            case R.id.spring_button:
+            case R.id.winter_button:
                 Utility.setTheme(getApplicationContext(), 3);
                 recreateActivity();
                 break;
-            case R.id.summer_button:
+            case R.id.spring_button:
                 Utility.setTheme(getApplicationContext(), 4);
+                recreateActivity();
+                break;
+            case R.id.summer_button:
+                Utility.setTheme(getApplicationContext(), 5);
                 recreateActivity();
                 break;
         }
     }
+
+    public void ExitButtonClick(View view) {
+        setContentView(R.layout.activity_home_screen_main); // Goes to HomeScreen
+    }
+
     public void recreateActivity() {
         Intent intent = getIntent();
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);

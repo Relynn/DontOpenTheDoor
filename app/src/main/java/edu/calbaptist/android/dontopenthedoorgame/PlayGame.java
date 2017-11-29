@@ -45,7 +45,6 @@ public class PlayGame extends AppCompatActivity {
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_play_game);
 
         setContentView(R.layout.activity_hard_gameplay);
 
