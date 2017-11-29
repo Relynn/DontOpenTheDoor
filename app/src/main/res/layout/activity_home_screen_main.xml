@@ -8,6 +8,7 @@
               android:layout_height="match_parent"
               android:background="@drawable/wood"
               android:orientation="vertical"
+              android:layout_gravity="center|center"
               tools:context="edu.calbaptist.android.dontopenthedoorgame.HomeScreenMainActivity">
 
 
@@ -45,6 +46,20 @@
         android:textStyle="bold"/>
 
     <Button
+        android:id="@+id/play_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorAccent"
+        android:contentDescription="@string/play_b"
+        android:onClick="PlayButtonClick"
+        android:text="Play"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"/>
+
+    <Button
         android:id="@+id/leaderboard_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -60,17 +75,17 @@
         android:textSize="18sp"/>
 
     <Button
-        android:id="@+id/play_button"
+        android:id="@+id/theme_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:background="@color/colorAccent"
-        android:contentDescription="@string/play_b"
-        android:onClick="PlayButtonClick"
-        android:text="Play"
+        android:onClick="ThemeButtonClick"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:text="ACHIEVEMENTS"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"/>
-
 </LinearLayout>
