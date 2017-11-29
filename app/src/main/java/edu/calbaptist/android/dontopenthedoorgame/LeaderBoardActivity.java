@@ -1,13 +1,12 @@
 package edu.calbaptist.android.dontopenthedoorgame;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
 
 import java.util.UUID;
 
-public class LeaderBoardActivity extends Activity {
+public class LeaderBoardActivity extends SingleFragmentActivity {
 
     private static final String EXTRA_PLAYER_ID =
             "edu.calbaptist.android.dontopenthedoorgame.player_id";
@@ -18,10 +17,10 @@ public class LeaderBoardActivity extends Activity {
         return intent;
     }
 
-//    @Override
-//    protected Fragment createFragment() {
-//        UUID playerId = (UUID) getIntent()
-//                .getSerializableExtra(EXTRA_PLAYER_ID);
-//        return LeaderBoardFragment.newInstance(playerId);
-//    }
+    @Override
+    protected Fragment createFragment() {
+        UUID playerId = (UUID) getIntent()
+                .getSerializableExtra(EXTRA_PLAYER_ID);
+        return LeaderBoardFragment.newInstance(playerId);
+    }
 }

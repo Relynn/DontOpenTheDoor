@@ -56,8 +56,7 @@
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:text="SHARE"
-            android:textSize="18sp"
-            android:onClick="ShareButtonClick"/>
+            android:textSize="18sp"/>
 
     </LinearLayout>
 </LinearLayout>
