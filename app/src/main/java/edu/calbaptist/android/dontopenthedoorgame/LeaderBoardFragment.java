@@ -34,6 +34,10 @@ public class LeaderBoardFragment extends Fragment {
     private Button mContinue;
     private Button mShare;
     private Intent shareIntent;
+    private String shareMessage = "My top 3 high scores for Don't Open The Door are: "
+            + ", "
+            + ", "
+            + "! Can you beat my score?";
 
     private OnFragmentInteractionListener mListener;
 
@@ -113,6 +117,7 @@ public class LeaderBoardFragment extends Fragment {
                 shareIntent = new Intent(android.content.Intent.ACTION_SEND);
                 shareIntent.setType("text/plain");
                 shareIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "My App");
+                shareIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareMessage);
                 startActivity(Intent.createChooser(shareIntent, "Share via"));
             }
         });
