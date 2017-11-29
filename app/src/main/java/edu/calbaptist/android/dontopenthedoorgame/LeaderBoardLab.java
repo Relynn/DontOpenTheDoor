@@ -103,7 +103,8 @@ public class LeaderBoardLab {
                 null, // having
                 null  // orderBy
         );
-        return new DoorGameCursorWrapper(cursor);
+        //return new DoorGameCursorWrapper(cursor);
+        return null;
     }
 
     private static ContentValues getContentValues(Player player) {

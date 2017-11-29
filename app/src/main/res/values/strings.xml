@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name"></string>
 
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="game_title">Don\'t Open the Door</string>
@@ -25,4 +26,7 @@
 
 
     <string name="title_activity_leader_board">LeaderBoardActivity</string>
+
+    <string name="prefs_theme_key">theme</string>
+
 </resources>

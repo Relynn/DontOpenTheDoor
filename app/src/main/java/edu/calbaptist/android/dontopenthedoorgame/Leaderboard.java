@@ -36,8 +36,9 @@ public class Leaderboard extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leaderboard);
-        UUID playerId = (UUID) getArguments().getSerializable(ARG_Player_ID);
-        mPlayer = LeaderBoardLab.get(getActivity().getPlayer(playerId));
+
+
+       // db = (new DatabaseHelper(this)).getReadableDatabase();
 
        // db = (new DatabaseHelper(this)).getReadableDatabase();
 
@@ -68,13 +69,6 @@ public class Leaderboard extends Activity {
             }
         });
 
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-
-        LeaderBoardLab.get(getActivity().updatePlayer(mPlayer));
     }
 
     public void ContinueButtonClick(View view) {
