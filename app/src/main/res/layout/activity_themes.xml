@@ -157,6 +157,7 @@
             android:layout_marginTop="15dp"
             android:background="@color/colorAccent"
             android:paddingHorizontal="20dp"
+            android:onClick="ExitButtonClick"
             android:text="EXIT"/>
     </LinearLayout>
 

@@ -6,8 +6,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -36,7 +34,8 @@ public class Leaderboard extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leaderboard);
 
-
+        Button continue_button = (Button) findViewById(R.id.continue_button);
+        Button share_button = (Button) findViewById(R.id.share_button);
        // db = (new DatabaseHelper(this)).getReadableDatabase();
 
        // db = (new DatabaseHelper(this)).getReadableDatabase();
@@ -48,13 +47,6 @@ public class Leaderboard extends Activity {
 
 
 
-        bContinue = (Button) findViewById(R.id.continue_button);
-        bContinue.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick (View view){
-                //
-            }
-        });
 
         bShare = (Button) findViewById(R.id.share_button);
         bShare.setOnClickListener(new View.OnClickListener() {
@@ -69,7 +61,6 @@ public class Leaderboard extends Activity {
         });
 
     }
-
     public void ContinueButtonClick(View view) {
         Intent intent = new Intent(Leaderboard.this, HomeScreenMainActivity.class);
         startActivity(intent);
