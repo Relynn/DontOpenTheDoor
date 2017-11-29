@@ -138,7 +138,7 @@ public class PlayEasy extends AppCompatActivity {
         an = (AnimationDrawable) ContextCompat.getDrawable(this, R.drawable.anim);
 
         do {
-            which = r.nextInt(4) + 1;
+            which = r.nextInt(2) + 1;
         } while (whichsave == which);
         whichsave = which;
 

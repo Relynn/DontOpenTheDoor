@@ -12,7 +12,6 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
-import java.util.UUID;
 
 /**
  * Created by lynnreilly on 10/25/17.
@@ -30,7 +29,7 @@ public class Leaderboard extends Activity {
     String shareMessage = "My top 3 high scores for Don't Open The Door are: "
             + ", "
             + ", "
-            + "! Can you beat my score?";
+            + "! Can you beat mine?";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

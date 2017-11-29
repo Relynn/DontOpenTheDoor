@@ -37,7 +37,7 @@ public class LeaderBoardFragment extends Fragment {
     private String shareMessage = "My top 3 high scores for Don't Open The Door are: "
             + ", "
             + ", "
-            + "! Can you beat my score?";
+            + "! Can you beat mine?";
 
     private OnFragmentInteractionListener mListener;
 
