@@ -7,6 +7,7 @@
         <item name="colorPrimaryDark">?attr/colorControlNormal</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textColorPrimary">@color/primary_text_material_light</item>
+        <item name="android:background">@drawable/wood</item>
     </style>
 
     <style name="FullscreenTheme" parent="AppTheme">
@@ -19,6 +20,34 @@
 
     <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
         <item name="android:background">@color/black_overlay</item>
+    </style>
+
+    <!-- Fall Theme -->
+
+    <style name="AppTheme.Fall" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">@drawable/fall_background</item>
+        <item name="android:textColor">#de403b</item>
+    </style>
+
+    <!-- Winter Theme -->
+
+    <style name="AppTheme.Winter" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">@drawable/winter_background</item>
+        <item name="android:textColor">#ececec</item>
+    </style>
+
+    <!-- Spring Theme -->
+
+    <style name="AppTheme.Spring" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">@drawable/spring_background</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <!-- Summer Theme -->
+
+    <style name="AppTheme.Summer" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">@drawable/summer_background</item>
+        <item name="android:textColor">#fff70b</item>
     </style>
 
 </resources>

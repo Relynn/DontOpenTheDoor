@@ -25,9 +25,13 @@
         <activity android:name=".Leaderboard">
         </activity>
         <activity
-            android:name=".PlayGame"
+            android:name=".PlayHard"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@style/FullscreenTheme">
+        </activity>
+        <activity android:name=".PlayEasy">
+        </activity>
+        <activity android:name=".PlayMedium">
         </activity>
         <activity android:name=".LeaderBoardActivity">
         </activity>

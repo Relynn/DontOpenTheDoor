@@ -2,6 +2,7 @@ package edu.calbaptist.android.dontopenthedoorgame;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +19,9 @@ import java.util.UUID;
  */
 
 public class Leaderboard extends Activity {
+
+    protected SQLiteDatabase db;
+
     ArrayList<String> addArray = new ArrayList<String>();
     ListView show;
     Button bContinue;
@@ -35,10 +39,14 @@ public class Leaderboard extends Activity {
         UUID playerId = (UUID) getArguments().getSerializable(ARG_Player_ID);
         mPlayer = LeaderBoardLab.get(getActivity().getPlayer(playerId));
 
+       // db = (new DatabaseHelper(this)).getReadableDatabase();
+
         //Adds Background Music
         MediaPlayer player = MediaPlayer.create(this, R.raw.scary);
         player.setLooping(true);
         player.start();
+
+
 
         bContinue = (Button) findViewById(R.id.continue_button);
         bContinue.setOnClickListener(new View.OnClickListener() {

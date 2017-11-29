@@ -21,6 +21,8 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="score_label">Score:</string>
+    <string name="prefs_theme_key">theme</string>
+
 
     <string name="title_activity_leader_board">LeaderBoardActivity</string>
 </resources>
