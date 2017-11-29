@@ -20,6 +20,8 @@
         </activity>
         <activity android:name=".ThemesActivity">
         </activity>
+        <activity android:name=".BaseActivity">
+        </activity>
         <activity android:name=".ShareActivity">
         </activity>
         <activity android:name=".Leaderboard">

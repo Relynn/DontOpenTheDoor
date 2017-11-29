@@ -38,11 +38,13 @@ public class HomeScreenMainActivity extends Activity {
 }
 
     public void LeaderboardButtonClick(View view) {
-        setContentView(R.layout.activity_leaderboard); // Goes to leaderboard
+        Intent intent = new Intent(HomeScreenMainActivity.this, Leaderboard.class);
+        startActivity(intent);
     }
 
     public void ThemeButtonClick(View view) {
-        setContentView(R.layout.activity_themes); // Goes to themes/achievements
+        Intent intent = new Intent(HomeScreenMainActivity.this, ThemesActivity.class);
+        startActivity(intent);
 
     }
 
