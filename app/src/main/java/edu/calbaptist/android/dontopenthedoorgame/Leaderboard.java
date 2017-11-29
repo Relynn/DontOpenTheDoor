@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 /**
  * Created by lynnreilly on 10/25/17.
@@ -31,6 +32,8 @@ public class Leaderboard extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leaderboard);
+        UUID playerId = (UUID) getArguments().getSerializable(ARG_Player_ID);
+        mPlayer = LeaderBoardLab.get(getActivity().getPlayer(playerId));
 
         //Adds Background Music
         MediaPlayer player = MediaPlayer.create(this, R.raw.scary);
@@ -57,6 +60,13 @@ public class Leaderboard extends Activity {
             }
         });
 
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+
+        LeaderBoardLab.get(getActivity().updatePlayer(mPlayer));
     }
 
     public void ContinueButtonClick(View view) {

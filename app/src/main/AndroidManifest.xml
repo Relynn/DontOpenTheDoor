@@ -29,6 +29,8 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@style/FullscreenTheme">
         </activity>
+        <activity android:name=".LeaderBoardActivity">
+        </activity>
     </application>
 
 </manifest>
