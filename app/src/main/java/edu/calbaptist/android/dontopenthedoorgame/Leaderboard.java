@@ -24,7 +24,7 @@ public class Leaderboard extends Activity {
     ArrayList<String> addArray = new ArrayList<String>();
     ListView show;
     Button bContinue;
-    Button bShare;
+    Button bShare;add
     Intent shareIntent;
     String shareMessage = "My top 3 high scores for Don't Open The Door are: "
             + ", "
@@ -35,6 +35,9 @@ public class Leaderboard extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leaderboard);
+
+
+       // db = (new DatabaseHelper(this)).getReadableDatabase();
 
        // db = (new DatabaseHelper(this)).getReadableDatabase();
 

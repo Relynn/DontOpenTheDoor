@@ -172,7 +172,7 @@ public class PlayMedium extends AppCompatActivity {
         an = (AnimationDrawable) ContextCompat.getDrawable(this, R.drawable.anim);
 
         do{
-            which = r.nextInt(4) +1;
+            which = r.nextInt(3) +1;
         } while(whichsave == which);
         whichsave = which;
 

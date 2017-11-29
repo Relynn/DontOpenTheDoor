@@ -24,6 +24,8 @@
         </activity>
         <activity android:name=".Leaderboard">
         </activity>
+        <activity android:name=".LeaderBoardActivity">
+        </activity>
         <activity
             android:name=".PlayHard"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -33,6 +35,7 @@
         </activity>
         <activity android:name=".PlayMedium">
         </activity>
+
     </application>
 
 </manifest>
