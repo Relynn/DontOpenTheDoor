@@ -30,17 +30,21 @@ public class DifficultyActivity extends Activity {
 
     public void EasyButtonClick(View view) {
 
+        Intent intent = new Intent(DifficultyActivity.this, PlayEasy.class);
+        startActivity(intent);
         setContentView(R.layout.activity_easy_gameplay);
     }
 
     public void MediumButtonClick(View view) {
 
+        Intent intent = new Intent(DifficultyActivity.this, PlayMedium.class);
+        startActivity(intent);
         setContentView(R.layout.activity_medium_gameplay);
     }
 
 
     public void HardButtonClick(View view) {
-        Intent intent = new Intent(DifficultyActivity.this, PlayGame.class);
+        Intent intent = new Intent(DifficultyActivity.this, PlayHard.class);
         startActivity(intent);
         setContentView(R.layout.activity_hard_gameplay);
     }
