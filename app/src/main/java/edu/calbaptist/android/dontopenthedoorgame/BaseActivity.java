@@ -10,10 +10,11 @@ import android.view.WindowManager;
  */
 
 public class BaseActivity extends AppCompatActivity {
-    private final static int THEME_FALL = 1;
-    private final static int THEME_WINTER = 2;
-    private final static int THEME_SPRING = 3;
-    private final static int THEME_SUMMER = 4;
+    private final static int THEME_ORIGINAL = 1;
+    private final static int THEME_FALL = 2;
+    private final static int THEME_WINTER = 3;
+    private final static int THEME_SPRING = 4;
+    private final static int THEME_SUMMER = 5;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -21,7 +22,12 @@ public class BaseActivity extends AppCompatActivity {
         updateTheme();
     }
     public void updateTheme() {
-        if (Utility.getTheme(getApplicationContext()) <= THEME_FALL) {
+        if (Utility.getTheme(getApplicationContext()) <= THEME_ORIGINAL) {
+            setTheme(R.style.AppTheme);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            }
+        } else if (Utility.getTheme(getApplicationContext()) == THEME_FALL) {
             setTheme(R.style.AppTheme_Fall);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
