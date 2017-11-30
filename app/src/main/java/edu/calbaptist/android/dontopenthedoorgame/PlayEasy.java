@@ -18,6 +18,14 @@ import android.widget.TextView;
 
 import java.util.Random;
 
+/**
+ * Created by Anthony Gomez
+ *
+ * PlayHard activity is launched by selecting the hard difficulty option after selecting Play Game.
+ * Creates 2 clickable image views and creates the game activity. Saves highest score reached in integer
+ * score.
+ */
+
 public class PlayEasy extends AppCompatActivity {
 
     ImageView d1, d2;
@@ -84,7 +92,7 @@ public class PlayEasy extends AppCompatActivity {
             public void onClick(View view) {
                 templeft = 1;
                 d1.setImageResource(R.drawable.door1);
-                score = score + 1;
+                score = score + 3;
                 tv_score.setText("SCORE: " + score);
                 d1.setEnabled(false);
             }
@@ -94,7 +102,7 @@ public class PlayEasy extends AppCompatActivity {
             public void onClick(View view) {
                 templeft = 1;
                 d2.setImageResource(R.drawable.door1);
-                score = score + 1;
+                score = score + 3;
                 tv_score.setText("SCORE: " + score);
                 d2.setEnabled(false);
             }
