@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 
 public class HomeScreenMainActivity extends Activity {
@@ -23,6 +24,8 @@ public class HomeScreenMainActivity extends Activity {
         Button play_button = (Button) findViewById(R.id.play_button);
         Button leaderboardButton = (Button)findViewById(R.id.leaderboard_button);
         Button theme_button = (Button) findViewById(R.id.theme_button);
+        final ImageButton sound_button = (ImageButton) findViewById(R.id.sound_button);
+     //   final ImageButton vibrate_button = (ImageButton) findViewById(R.id.vibrate_button);
 
         // Alert Dialog greeting that suggests user to use headphones
         new Handler().postDelayed(new Runnable() {
@@ -37,9 +40,42 @@ public class HomeScreenMainActivity extends Activity {
         }, 2000);
 
         //Adds Background Music
-        MediaPlayer player = MediaPlayer.create(this, R.raw.scary);
+        final MediaPlayer player = MediaPlayer.create(this, R.raw.scary);
         player.setLooping(true);
         player.start();
+        sound_button.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                // If the music is playing
+                if(player.isPlaying()) {
+                    // Pause the music player
+                    player.pause();
+                    sound_button.setBackgroundResource(R.drawable.sound_off);
+                }
+                    // If it's not playing
+                else {
+                    // Resume the music player
+                    player.start();
+                    sound_button.setBackgroundResource(R.drawable.sound_on);
+                }
+            }
+        });
+//
+//        vibrate_button.setOnClickListener(new View.OnClickListener(){
+//            public void onClick(View v) {
+//                // If the music is playing
+//                if(v.) {
+//                    // Pause the music player
+//                    player.pause();
+//                    sound_button.setBackgroundResource(R.drawable.vibrate_off);
+//                }
+//                // If it's not playing
+//                else {
+//                    // Resume the music player
+//                    player.start();
+//                    sound_button.setVisibility(R.drawable.vibrate);
+//                }
+//            }
+//        });
     }
 
     public void PlayButtonClick(View view) {

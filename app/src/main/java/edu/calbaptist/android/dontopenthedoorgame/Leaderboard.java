@@ -3,7 +3,6 @@ package edu.calbaptist.android.dontopenthedoorgame;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -39,13 +38,6 @@ public class Leaderboard extends Activity {
        // db = (new DatabaseHelper(this)).getReadableDatabase();
 
        // db = (new DatabaseHelper(this)).getReadableDatabase();
-
-        //Adds Background Music
-        MediaPlayer player = MediaPlayer.create(this, R.raw.scary);
-        player.setLooping(true);
-        player.start();
-
-
 
 
         bShare = (Button) findViewById(R.id.share_button);

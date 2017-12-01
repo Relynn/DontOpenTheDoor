@@ -47,11 +47,6 @@ public class PlayHard extends AppCompatActivity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_hard_gameplay);
 
-        //Adds Background Music
-        MediaPlayer player = MediaPlayer.create(this, R.raw.scary);
-        player.setLooping(true);
-        player.start();
-
         //Creates Jump Scare audio File
         MediaPlayer bang = MediaPlayer.create(this, R.raw.bang);
 
@@ -140,11 +135,6 @@ public class PlayHard extends AppCompatActivity {
     }
 
     private void theGameActions(){
-
-        //Adds Background Music
-        MediaPlayer player = MediaPlayer.create(this, R.raw.scary);
-        player.setLooping(true);
-        player.start();
 
         d1.setImageResource(R.drawable.door1);
         d2.setImageResource(R.drawable.door1);

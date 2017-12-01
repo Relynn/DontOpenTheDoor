@@ -3,11 +3,11 @@ package edu.calbaptist.android.dontopenthedoorgame;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.media.MediaPlayer;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -36,7 +36,7 @@ public class PlayEasy extends AppCompatActivity {
     int score = 0, fps = 1000;
     int which = 0, whichsave = 0;
     int templeft = 0, left = 1;
-
+   // Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
     DatabaseHelper db;
     AnimationDrawable an;
 
@@ -47,14 +47,6 @@ public class PlayEasy extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_easy_gameplay);
-
-        //Adds Background Music
-        MediaPlayer player = MediaPlayer.create(this, R.raw.scary);
-        player.setLooping(true);
-        player.start();
-
-        //Creates Jump Scare audio File
-        MediaPlayer bang = MediaPlayer.create(this, R.raw.bang);
 
         r = new Random();
 
@@ -114,8 +106,6 @@ public class PlayEasy extends AppCompatActivity {
 
         //Adds Background Music
         MediaPlayer player = MediaPlayer.create(this, R.raw.scary);
-        player.setLooping(true);
-        player.start();
 
         d1.setImageResource(R.drawable.door1);
         d2.setImageResource(R.drawable.door1);
@@ -185,6 +175,11 @@ public class PlayEasy extends AppCompatActivity {
                 }
 
                 if (left == 0) {
+
+
+                    // Vibrate for 500 milliseconds
+                 //   v.vibrate(1000);
+
                     AlertDialog.Builder mBuilder = new AlertDialog.Builder(PlayEasy.this);
                     View mView = getLayoutInflater().inflate(R.layout.dialog_score, null);
                     ImageButton mContinue = (ImageButton) mView.findViewById(R.id.continue_leaderboard_button);
