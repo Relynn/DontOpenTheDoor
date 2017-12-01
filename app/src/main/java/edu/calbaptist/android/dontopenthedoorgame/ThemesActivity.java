@@ -3,8 +3,6 @@ package edu.calbaptist.android.dontopenthedoorgame;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 
@@ -13,8 +11,6 @@ public class ThemesActivity extends BaseActivity implements View.OnClickListener
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_themes);
 
         ((ImageButton)findViewById(R.id.fall_button)).setOnClickListener(this);
@@ -22,7 +18,7 @@ public class ThemesActivity extends BaseActivity implements View.OnClickListener
         ((ImageButton)findViewById(R.id.spring_button)).setOnClickListener(this);
         ((ImageButton)findViewById(R.id.summer_button)).setOnClickListener(this);
         ((Button)findViewById(R.id.original_theme_button)).setOnClickListener(this);
-        ((Button)findViewById(R.id.exit_button)).setOnClickListener(this);
+        Button exit_button = (Button) findViewById(R.id.exit_button);
     }
 
     @Override

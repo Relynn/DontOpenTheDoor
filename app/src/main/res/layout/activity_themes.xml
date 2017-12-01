@@ -18,9 +18,7 @@
         android:layout_height="wrap_content"
         android:gravity="center|top"
         android:text="Theme Packs"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@color/primary_text_material_light"/>
+        android:textAlignment="center"/>
 
     <GridLayout
         android:layout_width="384dp"

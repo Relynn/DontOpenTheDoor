@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -22,18 +24,17 @@ public class HomeScreenMainActivity extends Activity {
         Button leaderboardButton = (Button)findViewById(R.id.leaderboard_button);
         Button theme_button = (Button) findViewById(R.id.theme_button);
 
-        //AlertDialog suggesting user to plug in headphones for a better experience
-//        AlertDialog.Builder mBuilder = new AlertDialog.Builder(HomeScreenMainActivity.this)
-//                .setMessage("Note: To enhance your experience we recommend plugging in headphones to get the full effect.");
-//            AlertDialog alert = mBuilder.create();
-//            alert.show();
-
-
-//        View mView = getLayoutInflater().inflate(R.layout.dialog_greeting, null);
-//        TextView gMessage = (TextView) mView.findViewById(R.id.greeting);
-//        mBuilder.setView(mView);
-//        AlertDialog dialog = mBuilder.create();
-//        dialog.show();
+        // Alert Dialog greeting that suggests user to use headphones
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                AlertDialog.Builder builder = new AlertDialog.Builder(HomeScreenMainActivity.this, R.style.AlertDialogCustom)
+                        .setTitle("Note:")
+                        .setMessage("Plugging in headphones can enhance the game play experience!");
+                AlertDialog alertdialog = builder.create();
+                alertdialog.show();
+            }
+        }, 2000);
 
         //Adds Background Music
         MediaPlayer player = MediaPlayer.create(this, R.raw.scary);

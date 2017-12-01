@@ -10,16 +10,9 @@
         <item name="backgroundColor">@drawable/wood</item>
     </style>
 
-    <style name="FullscreenTheme" parent="AppTheme">
-        <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
-        <item name="android:windowActionBarOverlay">true</item>
-        <item name="android:windowBackground">@null</item>
-        <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
-        <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
-    </style>
-
-    <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
-        <item name="android:background">@color/black_overlay</item>
+    <style name="AlertDialogCustom" parent="Theme.AppCompat.DayNight.Dialog.Alert">
+        <item name="android:textColorPrimary">@color/primary_text_material_light</item>
+        <item name="android:background">#3a3e40</item>
     </style>
 
     <!-- Fall Theme -->

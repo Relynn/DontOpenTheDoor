@@ -16,12 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
         <activity android:name=".DifficultyActivity">
         </activity>
-        <activity android:name=".ThemesActivity">
-        </activity>
-        <activity android:name=".BaseActivity">
+        <activity android:name=".ThemesActivity"
+                  android:theme="@style/AppTheme">
         </activity>
         <activity android:name=".ShareActivity">
         </activity>
@@ -29,10 +27,7 @@
         </activity>
         <activity android:name=".LeaderBoardActivity">
         </activity>
-        <activity
-            android:name=".PlayHard"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:theme="@style/FullscreenTheme">
+        <activity android:name=".PlayHard">
         </activity>
         <activity android:name=".PlayEasy">
         </activity>
